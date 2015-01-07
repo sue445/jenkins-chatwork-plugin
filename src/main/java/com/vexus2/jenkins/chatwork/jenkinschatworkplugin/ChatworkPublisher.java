@@ -153,7 +153,6 @@ public class ChatworkPublisher extends Publisher {
       int size = commits.size();
       for (int i = 0; i < size; i++) {
         JSONObject value = (JSONObject) commits.get(i);
-        // コミットメッセージが長くなりすぎることを考慮して文字長を50文字とする
         String s = value.getString("message");
         message.append(String.format("- %s\n", (s.length() > 50) ? s.substring(0, 50) + "..." : s));
       }
