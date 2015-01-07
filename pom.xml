@@ -25,6 +25,11 @@
             <name>vexus2</name>
             <email>hikaru.tooyama@gmail.com</email>
         </developer>
+        <developer>
+            <id>sue445</id>
+            <name>sue445</name>
+            <email>sue445@sue445.net</email>
+        </developer>
     </developers>
 
     <!-- get every artifact through repo.jenkins-ci.org, which proxies all the artifacts that we need -->
