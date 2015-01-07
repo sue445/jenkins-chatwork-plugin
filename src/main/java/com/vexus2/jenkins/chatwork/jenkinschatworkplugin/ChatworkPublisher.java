@@ -21,6 +21,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class ChatworkPublisher extends Publisher {
+  private static final int MAX_COMMIT_MESSAGE_LENGTH = 50;
 
   private final String rid;
   private final String defaultMessage;
@@ -153,9 +154,8 @@ public class ChatworkPublisher extends Publisher {
       int size = commits.size();
       for (int i = 0; i < size; i++) {
         JSONObject value = (JSONObject) commits.get(i);
-        // コミットメッセージが長くなりすぎることを考慮して文字長を50文字とする
         String s = value.getString("message");
-        message.append(String.format("- %s\n", (s.length() > 50) ? s.substring(0, 50) + "..." : s));
+        message.append(String.format("- %s\n", (s.length() > MAX_COMMIT_MESSAGE_LENGTH) ? s.substring(0, MAX_COMMIT_MESSAGE_LENGTH) + "..." : s));
       }
       message.append(String.format("\n%s", compareUrl));
 
